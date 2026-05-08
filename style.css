@@ -1,0 +1,209 @@
+/* General Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
+    color: #ffffff;
+    overflow: hidden;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Screen Container */
+#screen {
+    text-align: center;
+    max-width: 600px;
+    padding: 20px;
+    z-index: 10;
+    position: relative;
+}
+
+#text-display {
+    font-size: 1.5em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#button-container {
+    margin: 20px 0;
+}
+
+button {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #ffffff;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border-radius: 25px;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    font-size: 1em;
+}
+
+button:hover {
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 10px rgba(255, 192, 203, 0.5);
+}
+
+#input-container {
+    display: none;
+    margin: 20px 0;
+}
+
+#input-field {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #ffffff;
+    padding: 10px;
+    border-radius: 25px;
+    width: 200px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    margin-right: 10px;
+}
+
+#submit-btn {
+    padding: 10px 20px;
+    border-radius: 25px;
+}
+
+#photo-container {
+    display: none;
+    margin: 20px 0;
+}
+
+#photo-container img {
+    max-width: 200px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255, 192, 203, 0.5);
+}
+
+#slideshow {
+    display: none;
+    margin: 20px 0;
+}
+
+/* Particles */
+#particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.particle {
+    position: absolute;
+    font-size: 2em;
+    color: rgba(255, 192, 203, 0.5);
+    animation: float 10s linear infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
+}
+
+/* Confetti */
+.confetti {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: #ff69b4;
+    animation: confetti-fall 3s linear infinite;
+}
+
+@keyframes confetti-fall {
+    0% { transform: translateY(-10px) rotate(0deg); }
+    100% { transform: translateY(100vh) rotate(720deg); }
+}
+
+/* Fade Animations */
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+
+/* Hacking screen style */
+.hacking {
+    background: #000 !important;
+    color: #39ff14 !important;
+}
+
+.hacking #screen,
+.hacking #text-display,
+.hacking button,
+.hacking input {
+    color: #39ff14 !important;
+}
+
+.hacking button,
+.hacking input {
+    border-color: rgba(57, 255, 20, 0.4) !important;
+    background: rgba(0, 0, 0, 0.25) !important;
+}
+
+.hacking .typewriter {
+    border-color: #39ff14 !important;
+}
+
+.fade-out {
+    animation: fadeOut 1s ease-in-out forwards;
+}
+
+@keyframes fadeOut {
+    to { opacity: 0; }
+}
+
+/* Typewriter Effect */
+.typewriter {
+    border-right: 2px solid #ffffff;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 50% { border-color: transparent; }
+    51%, 100% { border-color: #ffffff; }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    #screen {
+        padding: 10px;
+    }
+    #text-display {
+        font-size: 1.2em;
+    }
+    button {
+        padding: 8px 16px;
+        margin: 0 5px;
+    }
+    #input-field {
+        width: 150px;
+    }
+}
